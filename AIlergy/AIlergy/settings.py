@@ -25,7 +25,7 @@ SECRET_KEY = 'h5x_^bcprgre9jh_m4#heceat&p5nr#jezi2yk(+ws#x0tqu48'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aiallergy.tech']
+ALLOWED_HOSTS = ['aiallergy.tech','127.0.0.1']
 
 
 # Application definition
