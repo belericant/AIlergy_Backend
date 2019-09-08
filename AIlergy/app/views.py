@@ -9,8 +9,8 @@ import mysql.connector
 import keras
 
 mydb = mysql.connector.connect(
-    host='mysqlserver',
-    user='bruh',
+    host='localhost',
+    user='root',
     passwd='makerecipesgreatagain',
 )
 
