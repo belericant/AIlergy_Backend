@@ -6,8 +6,11 @@ from PIL import Image
 import numpy as np
 import mysql.connector
 import keras
+<<<<<<< HEAD
 import os
 from django.conf import settings
+=======
+>>>>>>> 052bfd8a7f6654f1535582b1293b1b0d51049fa3
 
 mydb = mysql.connector.connect(
     host='localhost',
@@ -62,13 +65,18 @@ def classify(model_path, img):
 
     return dict(new_list)
 
+<<<<<<< HEAD
 import base64
 import json
 from django.views.decorators.csrf import csrf_exempt
+=======
+
+>>>>>>> 052bfd8a7f6654f1535582b1293b1b0d51049fa3
 import base64
 import json
 import io
 
+<<<<<<< HEAD
 @csrf_exempt
 def requestResponse(request):
     #print >> sys.stderr, request.method
@@ -77,11 +85,31 @@ def requestResponse(request):
     np_img = np.array(Image.open(base64.decodebytes(imageData))).astype(np.uint8)
     foodHits = classify('./foodnet_v2.h5', np_img)
     returnFoods = {image}
+=======
+def requestResponse(request):
+    print(request.method)
+    if request.method == 'POST':
+        #imageData = request.POST['image']
+        #allergensData = request.POST['allergens']
+        allergensData = {'bruh':'dumby'}
+    else:
+        allergensData = {'ded':'mate'}
+    """np_img = np.frombuffer(base64.b64encode(allergensData), dtype=np.uint8)
+    foodHits = classify('./foodnet_v1_inception_v3.h5', np_img)
+    Image.open(io.BytesIO(allergensData))
+    returnFoods = {}image
+>>>>>>> 052bfd8a7f6654f1535582b1293b1b0d51049fa3
     for key, value in foodHits:
         tempDict = {}
         for allergen in allergensData:
             confidence = mycursor.fetchall('SELECT count(*) FROM ' + key + ' WHERE ingredients LIKE \"%' + allergen + '%\"')[0]/mycursor.fetchall('SELECT count(*) FROM ' + key)[0]*100
             if confidence >= 5:
                 tempDict = {allergen: confidence}
+<<<<<<< HEAD
         returnFoods = {key: [value*100, tempDict]}
     return JsonResponse(returnFoods)
+=======
+        returnFoods = {key: [value*100, tempDict]}"""
+    return JsonResponse(allergensData)
+
+>>>>>>> 052bfd8a7f6654f1535582b1293b1b0d51049fa3

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
+<<<<<<< HEAD
 from django.urls import path, re_path
 from app.views import *
 
@@ -22,4 +23,12 @@ urlpatterns = [
     url(r'^request/$', requestResponse, name='request'),
     #path('request/', requestResponse),
     path('admin/', admin.site.urls)
+=======
+from django.urls import path
+from app.views import *
+
+urlpatterns = [
+    path('request/', requestResponse),
+    #path('admin/', admin.site.urls),
+>>>>>>> 052bfd8a7f6654f1535582b1293b1b0d51049fa3
 ]
