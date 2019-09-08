@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import *
 from django.http import JsonResponse
 import base64
 from PIL import Image
